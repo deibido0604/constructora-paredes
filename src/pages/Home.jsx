@@ -4,6 +4,10 @@ import propuestaImg from "../assets/img/Propuesta.jpg";
 import piscinas from "../assets/img/Piscinas.jpg";
 import fontaneria from "../assets/img/Fontaneria.jpg";
 import interiores from "../assets/img/Interiores.jpg";
+import jardineria from "../assets/img/Jardineria.jpg";
+import electricidad from "../assets/img/Electricidad.jpg";
+import remodelacion from "../assets/img/Remodelacion.jpg";
+import CarouselVertical from "../components/CarouselVertical";
 
 const { Title, Paragraph } = Typography;
 const { TextArea } = Input;
@@ -11,6 +15,16 @@ const { TextArea } = Input;
 const Home = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
+
+  const carouselImages = [
+    { src: propuestaImg, title: "Construcción Residencial" },
+    { src: piscinas, title: "Piscinas" },
+    { src: fontaneria, title: "Fontanería" },
+    { src: interiores, title: "Diseño de Interiores" },
+    { src: jardineria, title: "Jardinería" },
+    { src: electricidad, title: "Electricidad" },
+    { src: remodelacion, title: "Remodelación" }
+  ];
 
   const handleConocerMas = () => {
     navigate("/conocenos");
@@ -54,13 +68,13 @@ const Home = () => {
   };
 
   const servicios = [
-    { nombre: "Casas" },
+    { nombre: "Casas", imagen: propuestaImg },
     { nombre: "Piscinas", imagen: piscinas },
     { nombre: "Fontanería", imagen: fontaneria },
-    { nombre: "Jardinería" },
-    { nombre: "Electricidad" },
+    { nombre: "Jardinería", imagen: jardineria },
+    { nombre: "Electricidad", imagen: electricidad },
     { nombre: "Diseño de interiores", imagen: interiores },
-    { nombre: "Remodelación" },
+    { nombre: "Remodelación", imagen: remodelacion },
     { nombre: "Pintura" },
     { nombre: "Mas" }
   ];
@@ -72,6 +86,12 @@ const Home = () => {
 
   return (
     <div>
+      <CarouselVertical
+        images={carouselImages}
+        autoPlayInterval={4000}
+        height="500px"
+      />
+
       {/* Sección Propuesta de Valor */}
       <div style={{
         padding: "4rem 2rem",
@@ -207,7 +227,7 @@ const Home = () => {
                   hoverable
                 >
                   <div style={{
-                    fontSize: "16px",
+                    fontSize: "14px",
                     fontWeight: "600",
                     color: "#1a1a1a",
                     position: "relative",
