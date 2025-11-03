@@ -26,7 +26,6 @@ const HeaderNav = () => {
         { key: "/contacto", label: "CONTÁCTANOS" }
     ];
 
-    // Función para renderizar items del menú
     const renderMenuItems = (isMobile = false) => {
         return menuItems.map(item => (
             <Link
@@ -53,12 +52,10 @@ const HeaderNav = () => {
                         />
                     </div>
 
-                    {/* Menú de navegación para desktop - oculto en móvil */}
                     <nav className="main-nav desktop-menu">
                         {renderMenuItems()}
                     </nav>
 
-                    {/* Botón de menú hamburguesa - solo visible en móvil */}
                     <Button 
                         className="hamburger-btn"
                         type="text"
@@ -68,7 +65,6 @@ const HeaderNav = () => {
                 </div>
             </Header>
 
-            {/* Drawer para móvil */}
             <Drawer
                 title="Menú"
                 placement="right"

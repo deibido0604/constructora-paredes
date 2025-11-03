@@ -30,10 +30,6 @@ const Home = () => {
     navigate("/conocenos");
   };
 
-  const handleServicioClick = () => {
-    navigate("/residencial");
-  };
-
   const onFinish = async (values) => {
     try {
       const response = await fetch('https://formspree.io/f/mkgqzdyk', {
@@ -68,16 +64,20 @@ const Home = () => {
   };
 
   const servicios = [
-    { nombre: "Casas", imagen: propuestaImg },
-    { nombre: "Piscinas", imagen: piscinas },
-    { nombre: "Fontanería", imagen: fontaneria },
-    { nombre: "Jardinería", imagen: jardineria },
-    { nombre: "Electricidad", imagen: electricidad },
-    { nombre: "Diseño de interiores", imagen: interiores },
-    { nombre: "Remodelación", imagen: remodelacion },
-    { nombre: "Pintura" },
-    { nombre: "Mas" }
+    { nombre: "Casas", imagen: propuestaImg, id: "casas" },
+    { nombre: "Piscinas", imagen: piscinas, id: "piscinas" },
+    { nombre: "Fontanería", imagen: fontaneria, id: "fontaneria" },
+    { nombre: "Jardinería", imagen: jardineria, id: "jardineria" },
+    { nombre: "Electricidad", imagen: electricidad, id: "electricidad" },
+    { nombre: "Diseño de interiores", imagen: interiores, id: "interiores" },
+    { nombre: "Remodelación", imagen: remodelacion, id: "remodelacion" },
+    { nombre: "Pintura", id: "pintura" },
+    { nombre: "Mas", id: "mas" }
   ];
+
+  const handleServicioClick = (servicioId) => {
+    navigate(`/residencial#${servicioId}`);
+  };
 
   const opcionesServicios = servicios.map(servicio => ({
     value: servicio.nombre,
@@ -92,7 +92,6 @@ const Home = () => {
         height="500px"
       />
 
-      {/* Sección Propuesta de Valor */}
       <div style={{
         padding: "4rem 2rem",
         background: "#fff",
@@ -172,7 +171,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Sección Nuestros Servicios */}
       <div style={{
         padding: "4rem 2rem",
         background: "#f8f9fa"
@@ -197,7 +195,7 @@ const Home = () => {
             {servicios.map((servicio, index) => (
               <Col xs={12} sm={8} md={6} key={index}>
                 <Card
-                  onClick={handleServicioClick}
+                  onClick={() => handleServicioClick(servicio.id)}
                   style={{
                     textAlign: "center",
                     borderRadius: "8px",
@@ -242,7 +240,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Sección: Cotización */}
       <div style={{
         padding: "4rem 2rem",
         background: "#fff"
