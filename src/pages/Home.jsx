@@ -1,12 +1,21 @@
 import { Row, Col, Typography, Button, Card, Form, Input, Select, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import propuestaImg from "../assets/img/Propuesta.jpg";
+import propuestaImg_2 from "../assets/img/Propuesta_2.jpg";
 import piscinas from "../assets/img/Piscinas.jpg";
+import piscinas_2 from "../assets/img/Piscinas_2.jpg";
 import fontaneria from "../assets/img/Fontaneria.jpg";
 import interiores from "../assets/img/Interiores.jpg";
+import interiores_2 from "../assets/img/Interiores_2.jpg";
 import jardineria from "../assets/img/Jardineria.jpg";
 import electricidad from "../assets/img/Electricidad.jpg";
+import electricidad_2 from "../assets/img/Electricidad_2.jpg";
 import remodelacion from "../assets/img/Remodelacion.jpg";
+import remodelacion_2 from "../assets/img/Interiores_Luces_1.jpg";
+import refrigeracion from "../assets/img/Refrigeracion.jpg";
+import refrigeracion_2 from "../assets/img/Refrigeracion_2.jpg";
+import ceramica from "../assets/img/Ceramica.jpg";
+import ceramica_2 from "../assets/img/Ceramica_2.jpg";
 import CarouselVertical from "../components/CarouselVertical";
 
 const { Title, Paragraph } = Typography;
@@ -23,7 +32,30 @@ const Home = () => {
     { src: interiores, title: "Diseño de Interiores" },
     { src: jardineria, title: "Jardinería" },
     { src: electricidad, title: "Electricidad" },
-    { src: remodelacion, title: "Remodelación" }
+    { src: remodelacion, title: "Remodelación" },
+    { src: refrigeracion, title: "Refrigeración" },
+    { src: ceramica, title: "Ceramica" },
+
+    { src: propuestaImg_2, title: "Construcción Residencial" },
+    { src: piscinas_2, title: "Piscinas" },
+    // { src: fontaneria, title: "Fontanería" },
+    { src: interiores_2, title: "Diseño de Interiores" },
+    // { src: jardineria, title: "Jardinería" },
+    { src: electricidad_2, title: "Electricidad" },
+    { src: remodelacion_2, title: "Remodelación" },
+    { src: refrigeracion_2, title: "Refrigeración" },
+    { src: ceramica_2, title: "Ceramica" },
+
+    // { src: propuestaImg, title: "Construcción Residencial" },
+    // { src: piscinas, title: "Piscinas" },
+    // { src: fontaneria, title: "Fontanería" },
+    // { src: interiores, title: "Diseño de Interiores" },
+    // { src: jardineria, title: "Jardinería" },
+    // { src: electricidad, title: "Electricidad" },
+    // { src: remodelacion_2, title: "Remodelación" },
+    // { src: refrigeracion, title: "Refrigeración" },
+    // { src: ceramica, title: "Ceramica" },
+
   ];
 
   const handleConocerMas = () => {
@@ -71,8 +103,10 @@ const Home = () => {
     { nombre: "Electricidad", imagen: electricidad, id: "electricidad" },
     { nombre: "Diseño de interiores", imagen: interiores, id: "interiores" },
     { nombre: "Remodelación", imagen: remodelacion, id: "remodelacion" },
+    { nombre: "Refrigeracion", imagen: refrigeracion, id: "refrigeracion" },
+    { nombre: "Ceramica", imagen: ceramica, id: "ceramica" },
     { nombre: "Pintura", id: "pintura" },
-    { nombre: "Mas", id: "mas" }
+    { nombre: "Mas", imagen: propuestaImg_2, id: "mas" }
   ];
 
   const handleServicioClick = (servicioId) => {
@@ -208,7 +242,7 @@ const Home = () => {
                     background: servicio.imagen
                       ? `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${servicio.imagen})`
                       : "#ffffff",
-                    backgroundSize: "cover",
+                    backgroundSize: "100%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     transition: "all 0.3s ease",

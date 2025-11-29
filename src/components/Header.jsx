@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./HeaderNav.css";
-import headerLogo from '../assets/img/header.jpg';
+import headerLogo from '../assets/logo/header.jpg';
 
 const { Header } = Layout;
 

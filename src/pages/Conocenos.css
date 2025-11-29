@@ -1,0 +1,33 @@
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 25s linear infinite;
+}
+
+.carousel-item {
+    min-width: 160px;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 110px;
+    }
+}

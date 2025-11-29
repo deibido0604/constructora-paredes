@@ -1,14 +1,16 @@
-import { Row, Col, Typography, Button, Card } from "antd";
+import { Row, Col, Typography, Card } from "antd";
 import propuestaImg from "../assets/img/Propuesta.jpg";
-import interiores from "../assets/img/Interiores.jpg";
-import remodelacion from "../assets/img/Remodelacion.jpg";
-import jardineria from "../assets/img/Jardineria.jpg";
-import electricidad from "../assets/img/Electricidad.jpg";
-import piscinas from "../assets/img/Piscinas.jpg";
+import propuestaImg_2 from "../assets/img/Propuesta_2.jpg";
+import "./Conocenos.css";
 
 const { Title, Paragraph } = Typography;
 
 const Conocenos = () => {
+
+    const imagenesEquipo = Object.values(
+        import.meta.glob("../assets/img/*.{jpg,jpeg,png,svg}", { eager: true })
+    ).map(img => img.default);
+
     return (
         <div style={{ background: "#fff" }}>
 
@@ -16,7 +18,7 @@ const Conocenos = () => {
             <div
                 style={{
                     height: "450px",
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${interiores})`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${propuestaImg_2})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     display: "flex",
@@ -117,7 +119,7 @@ const Conocenos = () => {
                 </div>
             </div>
 
-            {/* EQUIPO */}
+            {/* EQUIPO — CARRUSEL INFINITO */}
             <div style={{ padding: "4rem 2rem" }}>
                 <div style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
                     <Title level={2} style={{ marginBottom: "2rem" }}>
@@ -128,22 +130,25 @@ const Conocenos = () => {
                         adaptadas a las necesidades de cada cliente. Trabajamos con personal con experiencia
                         y proveedores confiables para garantizar resultados duraderos.
                     </Paragraph>
-                    <Row gutter={[24, 24]} justify="center">
-                        {[interiores, electricidad, piscinas, remodelacion, jardineria].map((imagen, i) => (
-                            <Col xs={12} sm={8} md={4} key={i}>
-                                <Card
-                                    style={{
-                                        height: "140px",
-                                        borderRadius: "10px",
-                                        backgroundImage: `url(${imagen})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
-                                    }}
-                                />
-                            </Col>
-                        ))}
-                    </Row>
+
+                    <div className="carousel-wrapper">
+                        <div className="carousel-track">
+                            {[...imagenesEquipo, ...imagenesEquipo].map((imagen, i) => (
+                                <div className="carousel-item" key={i}>
+                                    <Card
+                                        style={{
+                                            height: "140px",
+                                            borderRadius: "10px",
+                                            backgroundImage: `url(${imagen})`,
+                                            backgroundSize: "cover",
+                                            backgroundPosition: "center",
+                                            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
 
