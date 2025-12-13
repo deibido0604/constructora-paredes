@@ -64,7 +64,7 @@ const Home = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await fetch('https://formspree.io/f/mkgqzdyk', {
+      const response = await fetch('https://formspree.io/f/mvgelkbg', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -418,3 +418,4 @@ const Home = () => {
 
 
 export default Home;
+
