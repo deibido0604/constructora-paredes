@@ -69,7 +69,7 @@ const Contactanos = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://formspree.io/f/mkgqzdyk', {
+            const response = await fetch('https://formspree.io/f/mvgelkbg', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -299,5 +299,6 @@ const Contactanos = () => {
         </div>
     );
 };
+
 
 export default Contactanos;
