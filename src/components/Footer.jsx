@@ -85,7 +85,7 @@ const FooterSection = () => {
             <h4 style={{ color: "#fff", marginBottom: "1rem" }}>Contacto</h4>
 
             <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>
-              <PhoneFilled /> +504 9386-2742
+              <PhoneFilled /> +504 9591-3714
             </p>
             <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>
               <MailFilled /> paredesconstrucciones61@gmail.com
@@ -111,3 +111,4 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
