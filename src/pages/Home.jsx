@@ -105,7 +105,7 @@ const Home = () => {
     { nombre: "Remodelación", imagen: remodelacion, id: "remodelacion" },
     { nombre: "Refrigeracion", imagen: refrigeracion, id: "refrigeracion" },
     { nombre: "Ceramica", imagen: ceramica, id: "ceramica" },
-    { nombre: "Pintura", id: "pintura" },
+    { nombre: "Pintura", imagen: propuestaImg, id: "pintura" },
     { nombre: "Mas", imagen: propuestaImg_2, id: "mas" }
   ];
 
@@ -415,5 +415,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;
