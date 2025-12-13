@@ -154,7 +154,9 @@ const Home = () => {
                 fontSize: "18px",
                 lineHeight: "1.8em",
                 color: "#1a1a1a",
-                marginBottom: "1.5rem"
+                marginBottom: "1.5rem",
+                textAlign: "justify",
+                textJustify: "inter-word"
               }}>
                 Somos una empresa constructora con años de experiencia en el sector,
                 especializados en proyectos residenciales, industriales y comerciales
@@ -164,7 +166,9 @@ const Home = () => {
                 fontSize: "18px",
                 lineHeight: "1.8em",
                 color: "#1a1a1a",
-                marginBottom: "2.5rem"
+                marginBottom: "2.5rem",
+                textAlign: "justify",
+                textJustify: "inter-word"
               }}>
                 Desde nuestros inicios hemos ejecutado proyectos con eficiencia y rapidez
                 sin comprometer la calidad, lo que nos ha permitido establecer relaciones

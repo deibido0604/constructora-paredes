@@ -50,13 +50,22 @@ const HeaderNav = () => {
                             alt="PAREDES CONSTRUCCIONES"
                             className="logo-image"
                         />
+
+                        <div className="biblical-container">
+                            <span className="biblical-quote">
+                                “Prosperados por la palabra.”
+                            </span>
+                            {/* <span className="biblical-verse">
+                                Proverbios 16:3
+                            </span> */}
+                        </div>
                     </div>
 
                     <nav className="main-nav desktop-menu">
                         {renderMenuItems()}
                     </nav>
 
-                    <Button 
+                    <Button
                         className="hamburger-btn"
                         type="text"
                         icon={<MenuOutlined />}

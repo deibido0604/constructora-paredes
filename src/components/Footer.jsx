@@ -11,7 +11,7 @@ const FooterSection = () => {
         background: "#0d0d0d",
         color: "#fff",
         padding: "3rem 1.5rem",
-        overflow: "hidden",          // 👈 evita scroll lateral
+        overflow: "hidden",
       }}
     >
       <div
@@ -47,12 +47,18 @@ const FooterSection = () => {
             </p>
 
             <div style={{ fontSize: "24px", marginTop: "1rem" }}>
-              <a href="#" style={{ color: "#fff", margin: "0 10px" }}>
+              <a
+                href="https://www.facebook.com/share/19T9PFwjQF/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#fff", margin: "0 10px" }}
+                aria-label="Facebook Paredes Construcciones HN"
+              >
                 <FacebookFilled />
               </a>
-              <a href="#" style={{ color: "#fff", margin: "0 10px" }}>
+              {/* <a href="#" style={{ color: "#fff", margin: "0 10px" }}>
                 <InstagramFilled />
-              </a>
+              </a> */}
             </div>
           </Col>
           <Col xs={24} sm={12} md={8}>
@@ -79,10 +85,10 @@ const FooterSection = () => {
             <h4 style={{ color: "#fff", marginBottom: "1rem" }}>Contacto</h4>
 
             <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>
-              <PhoneFilled /> +504 0000-0000
+              <PhoneFilled /> +504 9386-2742
             </p>
             <p style={{ color: "#ccc", marginBottom: "0.5rem" }}>
-              <MailFilled /> info@paredesconstruccioneshn.com
+              <MailFilled /> paredesconstrucciones61@gmail.com
             </p>
             <p style={{ color: "#ccc" }}>📍 Honduras</p>
           </Col>

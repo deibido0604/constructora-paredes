@@ -30,10 +30,10 @@ const Conocenos = () => {
                 }}
             >
                 <div style={{ maxWidth: "900px" }}>
-                    <Title style={{ color: "white", fontSize: "48px", fontWeight: "bold" }}>
+                    <Title style={{ color: "white", fontSize: "40px", fontWeight: "bold" }}>
                         CONÓCENOS
                     </Title>
-                    <Paragraph style={{ color: "#f1f1f1", fontSize: "20px", lineHeight: "1.8em" }}>
+                    <Paragraph style={{ color: "#f1f1f1", fontSize: "18px", lineHeight: "1.8em", fontWeight: "bold" }}>
                         Somos una empresa dedicada a la construcción con un enfoque en excelencia,
                         profesionalismo y calidad. Cada proyecto que realizamos está respaldado por
                         experiencia, compromiso y pasión por construir sueños que perduren.
@@ -61,13 +61,25 @@ const Conocenos = () => {
                             <Title level={2} style={{ fontWeight: "bold", color: "#1a1a1a" }}>
                                 NUESTRA HISTORIA
                             </Title>
-                            <Paragraph style={{ fontSize: "18px", lineHeight: "1.8em", color: "#444" }}>
+                            <Paragraph style={{
+                                fontSize: "18px",
+                                lineHeight: "1.8em",
+                                color: "#444",
+                                textAlign: "justify",
+                                textJustify: "inter-word"
+                            }}>
                                 Iniciamos como un pequeño equipo con grandes sueños y una visión clara:
                                 ofrecer servicios de construcción que no solo cumplieran, sino que superaran
                                 las expectativas de nuestros clientes.
                             </Paragraph>
 
-                            <Paragraph style={{ fontSize: "18px", lineHeight: "1.8em", color: "#444" }}>
+                            <Paragraph style={{
+                                fontSize: "18px",
+                                lineHeight: "1.8em",
+                                color: "#444",
+                                textAlign: "justify",
+                                textJustify: "inter-word"
+                            }}>
                                 Hoy, gracias a nuestro trabajo responsable, ética profesional y compromiso
                                 con la calidad, nos hemos consolidado como una empresa confiable capaz de
                                 ejecutar proyectos de alto nivel en el ámbito residencial, comercial e industrial.
@@ -87,11 +99,11 @@ const Conocenos = () => {
                                 style={{
                                     padding: "2rem",
                                     borderRadius: "12px",
-                                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+                                    boxShadow: "0 16px 12px rgba(0,0,0,0.2)"
                                 }}
                             >
-                                <Title level={3}>Nuestra Misión</Title>
-                                <Paragraph style={{ fontSize: "17px", lineHeight: "1.7em", color: "#555" }}>
+                                <Title level={2}>Nuestra Misión</Title>
+                                <Paragraph style={{ fontSize: "18px", lineHeight: "1.7em", color: "#555" }}>
                                     Brindar soluciones de construcción innovadoras, eficientes y seguras,
                                     cuidando cada detalle para garantizar la satisfacción total de nuestros clientes,
                                     mientras construimos espacios que mejoren la vida de las personas.
@@ -104,11 +116,11 @@ const Conocenos = () => {
                                 style={{
                                     padding: "2rem",
                                     borderRadius: "12px",
-                                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+                                    boxShadow: "0 16px 12px rgba(0,0,0,0.2)"
                                 }}
                             >
-                                <Title level={3}>Nuestra Visión</Title>
-                                <Paragraph style={{ fontSize: "17px", lineHeight: "1.7em", color: "#555" }}>
+                                <Title level={2}>Nuestra Visión</Title>
+                                <Paragraph style={{ fontSize: "18px", lineHeight: "1.7em", color: "#555" }}>
                                     Ser una empresa referente en el sector construcción, reconocida por su calidad,
                                     seriedad y excelencia, desarrollando proyectos que marquen la diferencia en la comunidad.
                                 </Paragraph>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Row, Col, Typography, Button, Form, Input, Select, message, Card } from "antd";
 import { EnvironmentOutlined, PhoneOutlined, MailOutlined } from "@ant-design/icons";
 import propuestaImg from "../assets/img/Propuesta.jpg";
@@ -14,6 +15,7 @@ const { TextArea } = Input;
 
 const Contactanos = () => {
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
     const carouselImages = [
         { src: propuestaImg, title: "Construcción Residencial" },
@@ -39,7 +41,33 @@ const Contactanos = () => {
 
     const opcionesServicios = servicios.map(s => ({ value: s, label: s }));
 
+    const showSuccessMessage = () => {
+        message.success({
+            content: '¡Mensaje enviado con éxito! Te contactaremos pronto.',
+            duration: 5,
+            style: {
+                fontSize: '16px',
+                fontWeight: '500',
+                marginTop: '50px'
+            }
+        });
+    };
+
+    const showErrorMessage = (text = 'Error al enviar el formulario. Por favor intenta nuevamente.') => {
+        message.error({
+            content: text,
+            duration: 5,
+            style: {
+                fontSize: '16px',
+                fontWeight: '500',
+                marginTop: '50px'
+            }
+        });
+    };
+
     const onFinish = async (values) => {
+        setLoading(true);
+
         try {
             const response = await fetch('https://formspree.io/f/mkgqzdyk', {
                 method: 'POST',
@@ -56,12 +84,20 @@ const Contactanos = () => {
             });
 
             if (response.ok) {
-                message.success('¡Mensaje enviado con éxito! Te contactaremos pronto.');
+                showSuccessMessage();
                 form.resetFields();
-            } else message.error('Error al enviar el formulario.');
+            } else {
+                showErrorMessage();
+            }
         } catch (error) {
-            message.error('Error al enviar el formulario.');
+            showErrorMessage();
+        } finally {
+            setLoading(false);
         }
+    };
+
+    const onFinishFailed = (errorInfo) => {
+        showErrorMessage('Por favor completa todos los campos requeridos.');
     };
 
     return (
@@ -128,17 +164,17 @@ const Contactanos = () => {
 
                                 <div style={{ marginBottom: "1rem", display: "flex", alignItems: "center" }}>
                                     <PhoneOutlined style={{ fontSize: "22px", color: "#0cb7f2", marginRight: "14px" }} />
-                                    <span>+504 8847-6055</span>
+                                    <span>+504 9386-2742</span>
                                 </div>
 
                                 <div style={{ marginBottom: "1.5rem", display: "flex", alignItems: "center" }}>
                                     <MailOutlined style={{ fontSize: "22px", color: "#0cb7f2", marginRight: "14px" }} />
-                                    <span>contacto@tuconstructora.com</span>
+                                    <span>paredesconstrucciones61@gmail.com</span>
                                 </div>
 
                                 <Button
                                     type="primary"
-                                    href="https://wa.me/50488476055"
+                                    href="https://wa.me/50493862742"
                                     size="large"
                                     style={{
                                         background: "#25D366",
@@ -167,6 +203,7 @@ const Contactanos = () => {
                                     form={form}
                                     layout="vertical"
                                     onFinish={onFinish}
+                                    onFinishFailed={onFinishFailed}
                                     style={{ maxWidth: "600px", margin: "0 auto" }}
                                 >
                                     <Row gutter={16}>
@@ -238,6 +275,7 @@ const Contactanos = () => {
                                             type="primary"
                                             htmlType="submit"
                                             size="large"
+                                            loading={loading}
                                             style={{
                                                 background: "#0cb7f2",
                                                 borderColor: "#0cb7f2",

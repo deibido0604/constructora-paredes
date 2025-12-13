@@ -1,4 +1,4 @@
-import { Row, Col, Typography, Divider } from "antd";
+import { Row, Col, Typography, Divider, Carousel } from "antd";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -9,8 +9,15 @@ import jardineria from "../assets/img/Jardineria.jpg";
 import electricidad from "../assets/img/Electricidad.jpg";
 import interiores from "../assets/img/Interiores.jpg";
 import remodelacion from "../assets/img/Remodelacion.jpg";
-
-import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import refrigeracion from "../assets/img/Refrigeracion.jpg";
+import ceramica from "../assets/img/Ceramica.jpg";
+import propuestaImg_2 from "../assets/img/Propuesta_2.jpg";
+import piscinas_2 from "../assets/img/Piscinas_2.jpg";
+import interiores_2 from "../assets/img/Interiores_2.jpg";
+import electricidad_2 from "../assets/img/Electricidad_2.jpg";
+import remodelacion_2 from "../assets/img/Interiores_Luces_1.jpg";
+import refrigeracion_2 from "../assets/img/Refrigeracion_2.jpg";
+import ceramica_2 from "../assets/img/Ceramica_2.jpg";
 
 const { Title, Paragraph } = Typography;
 
@@ -21,7 +28,6 @@ const Residencial = () => {
         {
             id: "casas",
             titulo: "CONSTRUCCIÓN DE CASAS",
-            imagen: propuestaImg,
             descripcion: "Diseñamos y construimos tu casa soñada desde los cimientos hasta el último detalle. Utilizamos materiales de primera calidad y técnicas constructivas modernas para garantizar durabilidad y confort en cada espacio de tu hogar.",
             detalles: [
                 "Planos arquitectónicos personalizados",
@@ -31,16 +37,11 @@ const Residencial = () => {
                 "Materiales de primera calidad",
                 "Cumplimiento de normativas"
             ],
-            slider: true,
-            antesDespues: {
-                antes: propuestaImg,
-                despues: piscinas
-            }
+            imagenes: [propuestaImg, propuestaImg_2]
         },
         {
             id: "piscinas",
             titulo: "PISCINAS",
-            imagen: piscinas,
             descripcion: "Diseñamos y construimos piscinas modernas, funcionales y seguras que se adaptan perfectamente a tu espacio exterior. Creamos ambientes acuáticos que se convierten en el centro de reunión familiar.",
             detalles: [
                 "Diseños personalizados",
@@ -50,16 +51,11 @@ const Residencial = () => {
                 "Materiales antideslizantes",
                 "Sistemas de mantenimiento"
             ],
-            slider: true,
-            antesDespues: {
-                antes: piscinas,
-                despues: fontaneria
-            }
+            imagenes: [piscinas, piscinas_2]
         },
         {
             id: "fontaneria",
             titulo: "FONTANERÍA",
-            imagen: fontaneria,
             descripcion: "Soluciones integrales en sistemas hidráulicos residenciales. Instalaciones eficientes, libres de fugas y con los más altos estándares de calidad para garantizar el perfecto funcionamiento del agua en tu hogar.",
             detalles: [
                 "Instalación de tuberías PVC y cobre",
@@ -69,16 +65,11 @@ const Residencial = () => {
                 "Mantenimiento preventivo",
                 "Reparaciones urgentes 24/7"
             ],
-            slider: true,
-            antesDespues: {
-                antes: fontaneria,
-                despues: jardineria
-            }
+            imagenes: [fontaneria]
         },
         {
             id: "jardineria",
             titulo: "JARDINERÍA Y PAISAJISMO",
-            imagen: jardineria,
             descripcion: "Transformamos tus espacios exteriores en oasis verdes. Diseñamos jardines que armonizan con tu construcción, creando ambientes naturales que embellecen y aumentan el valor de tu propiedad.",
             detalles: [
                 "Diseño paisajístico personalizado",
@@ -88,16 +79,11 @@ const Residencial = () => {
                 "Césped natural y artificial",
                 "Mantenimiento integral"
             ],
-            slider: true,
-            antesDespues: {
-                antes: jardineria,
-                despues: electricidad
-            }
+            imagenes: [jardineria]
         },
         {
             id: "electricidad",
             titulo: "ELECTRICIDAD RESIDENCIAL",
-            imagen: electricidad,
             descripcion: "Instalaciones eléctricas seguras, eficientes y modernas para tu hogar. Implementamos sistemas que cumplen con todas las normativas de seguridad y se adaptan a las necesidades tecnológicas actuales.",
             detalles: [
                 "Cableado estructurado completo",
@@ -107,16 +93,11 @@ const Residencial = () => {
                 "Instalaciones seguras certificadas",
                 "Soluciones energéticas eficientes"
             ],
-            slider: true,
-            antesDespues: {
-                antes: electricidad,
-                despues: interiores
-            }
+            imagenes: [electricidad, electricidad_2]
         },
         {
             id: "interiores",
             titulo: "DISEÑO DE INTERIORES",
-            imagen: interiores,
             descripcion: "Transformamos tus espacios interiores con diseños funcionales, estéticos y personalizados. Creamos ambientes que reflejan tu personalidad mientras optimizamos cada centímetro de tu hogar.",
             detalles: [
                 "Asesoría en diseño y decoración",
@@ -126,11 +107,7 @@ const Residencial = () => {
                 "Iluminación interior estratégica",
                 "Ambientes armónicos y funcionales"
             ],
-            slider: true,
-            antesDespues: {
-                antes: interiores,
-                despues: remodelacion
-            }
+            imagenes: [interiores, interiores_2]
         },
         {
             id: "remodelacion",
@@ -144,16 +121,39 @@ const Residencial = () => {
                 "Mejora de aislamiento térmico y acústico",
                 "Modernización de fachadas"
             ],
-            slider: true,
-            antesDespues: {
-                antes: remodelacion,
-                despues: propuestaImg
-            }
+            imagenes: [remodelacion, remodelacion_2]
+        },
+        {
+            id: "refrigeracion",
+            titulo: "REFRIGERACIÓN Y CLIMATIZACIÓN",
+            descripcion: "Instalación y mantenimiento de sistemas de refrigeración y aire acondicionado para garantizar el confort térmico en tu hogar durante todo el año. Ofrecemos soluciones eficientes y de bajo consumo energético.",
+            detalles: [
+                "Instalación de aire acondicionado split",
+                "Sistemas centralizados de climatización",
+                "Refrigeradores y cámaras frigoríficas",
+                "Mantenimiento preventivo y correctivo",
+                "Limpieza y desinfección de equipos",
+                "Optimización del consumo energético"
+            ],
+            imagenes: [refrigeracion, refrigeracion_2]
+        },
+        {
+            id: "ceramica",
+            titulo: "INSTALACIÓN DE CERÁMICA Y PORCELANATO",
+            descripcion: "Trabajos de alta precisión en la instalación de cerámica, porcelanato y piedras naturales. Creamos acabados perfectos que realzan la belleza de tus pisos y paredes con durabilidad garantizada.",
+            detalles: [
+                "Instalación de cerámica y porcelanato",
+                "Trabajos en piedra natural y mármol",
+                "Diseños personalizados y mosaicos",
+                "Cortes precisos y ajustes perfectos",
+                "Juntas uniformes y limpias",
+                "Impermeabilización de áreas húmedas"
+            ],
+            imagenes: [ceramica, ceramica_2]
         },
         {
             id: "pintura",
             titulo: "PINTURA Y ACABADOS",
-            imagen: propuestaImg,
             descripcion: "Aplicamos técnicas profesionales de pintura y acabados que realzan la belleza arquitectónica de tu hogar. Utilizamos productos de alta calidad que protegen y duran por más tiempo.",
             detalles: [
                 "Pintura interior y exterior",
@@ -163,11 +163,21 @@ const Residencial = () => {
                 "Materiales de alta durabilidad",
                 "Limpieza y protección post-obra"
             ],
-            slider: true,
-            antesDespues: {
-                antes: propuestaImg,
-                despues: electricidad
-            }
+            imagenes: [propuestaImg, propuestaImg_2]
+        },
+        {
+            id: "mas",
+            titulo: "MÁS SERVICIOS ESPECIALIZADOS",
+            descripcion: "Además de nuestros servicios principales, ofrecemos una amplia gama de soluciones especializadas para cubrir todas las necesidades de tu proyecto residencial. Consulta por servicios adicionales personalizados.",
+            detalles: [
+                "Instalación de puertas y ventanas",
+                "Trabajos en yeso y drywall",
+                "Impermeabilización de techos y terrazas",
+                "Instalación de closets y mobiliario empotrado",
+                "Sistemas de seguridad y domótica",
+                "Asesoría técnica y permisos municipales"
+            ],
+            imagenes: [propuestaImg_2, propuestaImg]
         }
     ];
 
@@ -196,7 +206,14 @@ const Residencial = () => {
                 <Title level={1} style={{ color: "#0cb7f2", marginBottom: "1.5rem" }}>
                     SERVICIOS RESIDENCIALES
                 </Title>
-                <Paragraph style={{ fontSize: "18px", color: "#666", maxWidth: "800px", margin: "0 auto" }}>
+                <Paragraph style={{ 
+                    fontSize: "18px", 
+                    color: "#666", 
+                    maxWidth: "800px", 
+                    margin: "0 auto",
+                    textAlign: "justify",
+                    textJustify: "inter-word"
+                }}>
                     Soluciones integrales para hacer de tu hogar el espacio perfecto. Calidad, experiencia y compromiso en cada proyecto.
                 </Paragraph>
             </div>
@@ -219,33 +236,45 @@ const Residencial = () => {
                                 xs={{ span: 24, order: 2 }}
                                 md={{ span: 12, order: index % 2 === 0 ? 1 : 2 }}
                             >
-                                {servicio.slider ? (
-                                    <BeforeAfterSlider
-                                        beforeImage={servicio.antesDespues.antes}
-                                        afterImage={servicio.antesDespues.despues}
-                                        height="400px"
-                                        width="100%"
-                                        initialPosition={50}
-                                    />
-                                ) : (
-                                    <img
-                                        src={servicio.imagen}
-                                        alt={servicio.titulo}
-                                        style={{
-                                            width: "100%",
-                                            height: "400px",
-                                            objectFit: "cover",
-                                            borderRadius: "12px",
-                                            boxShadow: "0 8px 24px rgba(0,0,0,0.1)"
-                                        }}
-                                    />
-                                )}
+                                <Carousel 
+                                    autoplay 
+                                    autoplaySpeed={10000}
+                                    dotPosition="bottom"
+                                    style={{
+                                        width: "100%",
+                                        borderRadius: "12px",
+                                        overflow: "hidden",
+                                        boxShadow: "0 8px 24px rgba(0,0,0,0.1)"
+                                    }}
+                                >
+                                    {servicio.imagenes.map((imagen, imgIndex) => (
+                                        <div key={imgIndex}>
+                                            <img
+                                                src={imagen}
+                                                alt={`${servicio.titulo} ${imgIndex + 1}`}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "400px",
+                                                    objectFit: "cover",
+                                                    borderRadius: "12px"
+                                                }}
+                                            />
+                                        </div>
+                                    ))}
+                                </Carousel>
                             </Col>
                             <Col
                                 xs={{ span: 24, order: 3 }}
                                 md={{ span: 12, order: index % 2 === 0 ? 2 : 1 }}
                             >
-                                <Paragraph style={{ color: "#1a1a1a", marginBottom: "2rem", fontSize: "16px", lineHeight: "1.8" }}>
+                                <Paragraph style={{ 
+                                    color: "#1a1a1a", 
+                                    marginBottom: "2rem", 
+                                    fontSize: "16px", 
+                                    lineHeight: "1.8",
+                                    textAlign: "justify",
+                                    textJustify: "inter-word"
+                                }}>
                                     {servicio.descripcion}
                                 </Paragraph>
 
