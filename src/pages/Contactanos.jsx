@@ -166,7 +166,7 @@ const Contactanos = () => {
 
                                 <div style={{ marginBottom: "1rem", display: "flex", alignItems: "center" }}>
                                     <PhoneOutlined style={{ fontSize: "22px", color: "#0cb7f2", marginRight: "14px" }} />
-                                    <span>+504 9386-2742</span>
+                                    <span>+504 9591-3714</span>
                                 </div>
 
                                 <div style={{ marginBottom: "1.5rem", display: "flex", alignItems: "center" }}>
@@ -176,7 +176,7 @@ const Contactanos = () => {
 
                                 <Button
                                     type="primary"
-                                    href="https://wa.me/50493862742"
+                                    href="https://wa.me/50495913714"
                                     size="large"
                                     style={{
                                         background: "#25D366",
@@ -304,4 +304,5 @@ const Contactanos = () => {
 
 
 export default Contactanos;
+
 
