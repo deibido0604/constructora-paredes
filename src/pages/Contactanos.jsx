@@ -35,6 +35,8 @@ const Contactanos = () => {
         "Electricidad",
         "Diseño de interiores",
         "Remodelación",
+        "Refrigeracion",
+        "Ceramica".
         "Pintura",
         "Más"
     ];
@@ -302,3 +304,4 @@ const Contactanos = () => {
 
 
 export default Contactanos;
+
